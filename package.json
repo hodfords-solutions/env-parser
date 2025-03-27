@@ -1,0 +1,31 @@
+{
+  "name": "@hodfords/env-parser",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node sample/index.ts",
+    "build": "tsc",
+    "format": "prettier --write \"sample/**/*.ts\" \"lib/**/*.ts\" ",
+    "lint": "eslint \"lib/**/*.ts\" --fix",
+    "postbuild": "cp package.json dist/lib && cp README.md dist/lib && cp .npmrc dist/lib"
+  },
+  "dependencies": {
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3",
+    "prettier": "^3.5.3",
+    "eslint": "^9.23.0",
+    "@hodfords/nestjs-eslint-config": "^11.0.1",
+    "@hodfords/nestjs-prettier-config": "^11.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hodfords-solutions/env-parser"
+  },
+  "bugs": {
+    "url": "https://github.com/hodfords-solutions/env-parser/issues"
+  }
+}

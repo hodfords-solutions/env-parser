@@ -39,5 +39,8 @@ export const env = parse(process.env, {
 
 > Note: env-parser supports multiple parser levels, but we recommend using up to 2 levels to ensure easier code readability.
 
+
+More validation function here: [Zod Validation](https://zod.dev/?id=basic-usage)
+
 ## License
 This project is licensed under the MIT License

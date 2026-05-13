@@ -3,7 +3,8 @@ import { parse, z } from '../lib';
 const vars = {
     APP_PORT: '5000',
     REDIS_PORT: '1',
-    ALLOW_SEND_MAIL: 'False'
+    ALLOW_SEND_MAIL: 'False',
+    APP_VERSION_WINDOWS_LATEST: '1.0.0'
 };
 
 const env = parse(vars, {
@@ -12,7 +13,12 @@ const env = parse(vars, {
         PORT: z.number().default(6379),
         HOST: z.string().default('localhost')
     },
-    ALLOW_SEND_MAIL: z.boolean().default(true)
+    ALLOW_SEND_MAIL: z.boolean().default(true),
+    APP_VERSION: {
+        WINDOWS: {
+            LATEST: z.string().optional()
+        }
+    }
 });
 
-console.log(env.APP_PORT);
+console.log(env.REDIS.PORT);

@@ -1,21 +1,21 @@
 import { DeepReadonlyObject, EnvSchema, ParsedSchema, SafeParsedSchema, Schemas } from './type';
-import { SafeParseReturnType, z } from 'zod';
+import { z } from 'zod';
 import { getSchemaWithPreprocessor } from './prepare';
 import { parseError, throwErrors } from './error';
 
 export class ZodResult<T> {
-    constructor(public result: SafeParseReturnType<T, any>) {}
+    constructor(public result: z.ZodSafeParseResult<T>) {}
 
     isSuccess(): boolean {
         return this.result.success;
     }
 
     message(): string {
-        return this.result.error.errors[0].message;
+        return this.result.error?.issues[0].message ?? '';
     }
 
     value(): T {
-        return this.result.data;
+        return this.result.data as T;
     }
 }
 

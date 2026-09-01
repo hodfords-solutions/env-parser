@@ -34,7 +34,7 @@ export type DeepReadonlyObject<T> = {
 
 export type Schemas = Record<string, SimpleSchema | NestedSchema>;
 
-export type SimpleSchema<TOut = any, TIn = any> = z.ZodType<TOut, z.ZodTypeDef, TIn>;
+export type SimpleSchema<TOut = any, TIn = any> = z.ZodType<TOut, TIn>;
 
 export type NestedSchema<TOut = any, TIn = any> = {
     [key: string]: SimpleSchema<TOut, TIn> | NestedSchema<TOut, TIn>;

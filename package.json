@@ -1,6 +1,6 @@
 {
   "name": "@hodfords/env-parser",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,16 +10,18 @@
     "lint": "eslint \"lib/**/*.ts\" --fix",
     "postbuild": "cp package.json dist/lib && cp README.md dist/lib && cp .npmrc dist/lib"
   },
-  "dependencies": {
-    "zod": "^3.24.2"
+  "peerDependencies": {
+    "zod": ">=4.0.0"
   },
   "devDependencies": {
-    "ts-node": "^10.9.2",
-    "typescript": "^5.5.3",
-    "prettier": "^3.5.3",
-    "eslint": "^9.23.0",
-    "@hodfords/nestjs-eslint-config": "^11.0.1",
-    "@hodfords/nestjs-prettier-config": "^11.0.1"
+    "@hodfords/nestjs-eslint-config": "11.0.4",
+    "@hodfords/nestjs-prettier-config": "11.0.2",
+    "@types/node": "25.2.0",
+    "eslint": "9.39.2",
+    "prettier": "3.8.1",
+    "ts-node": "10.9.2",
+    "typescript": "6.0.3",
+    "zod": "4.5.4"
   },
   "repository": {
     "type": "git",
